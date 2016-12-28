@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% from "_formhelper.html" import render_field, render_field_with_errors %}
+<html lang="en">
+
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <title></title>
+	    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles/mainpage.css') }}">
+
+	</head>
+	<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<header>CLIENT INFORMATION</header>
+				<form class="form" action="/info/receiver/" id="form">
+				    <div>
+					    <fieldset>
+					        <legend>IDENTIFYING</legend>
+	        
+					        <p>
+					        {% if client_data['First Name'] %}
+							{{ client_data['First Name'] }} 
+							{% endif %}
+							</p>
+
+					        <p>
+					        {% if client_data['Last Name'] %}
+							{{ client_data['Last Name'] }} 
+							{% endif %}
+							</p>
+
+					        <p>
+					        {% if client_data['Date of Birth'] %}
+							{{ client_data['Date of Birth'] }} 
+							{% endif %}
+							</p>
+
+							<p>{% if client_data['Address'] %}
+							{{ client_data['Address'] }} 
+							{% endif %}
+							</p>
+
+							<p>{% if client_data['Telephone'] %}
+							{{ client_data['Telephone'] }} 
+							{% endif %}
+							</p>
+
+							<p>{% if client_data['Safe Number to Call'] %}
+							{{ client_data['Safe Number to Call'] }} 
+							{% endif %}
+							</p>
+
+							<p>{% if client_data['Primary Language'] %}
+							{{ client_data['Primary Langugage'] }} 
+							{% endif %}
+							</p>
+
+					        <legend>ELIGIBILITY</legend>				
+							<p>
+							{% if client_data['Income'] %}
+							{{ client_data['Income'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Income Source'] %}
+							{{ client_data['Income Source'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Income Source'] %}
+							{{ client_data['Income Source'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Dependents'] %}
+							{{ client_data['Dependents'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Health Diagnosis'] %}
+							{{ client_data['Health Diagnosis'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Military Service'] %}
+							{{ client_data['Military Service'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Immigration Status'] %}
+							{{ client_data['Immigration Status'] }} 
+							{% endif %}
+							</p>
+
+							{% if client_data['Legal Problem'] %}
+					        <legend>LEGAL ISSUE</legend>	
+							{% endif %}
+
+							<p>
+							{% if client_data['Legal Problem'] %}
+							{{ client_data['Legal Problem'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['County Where Case is Active'] %}
+							{{ client_data['County Where Case is Active'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Case Number'] %}
+							{{ client_data['Case Number'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Approaching Deadlines'] %}
+							{{ client_data['Approaching Deadlines'] }} 
+							{% endif %}
+							</p>
+
+							{% if client_data['Opposing Party'] %}
+					        <legend>CONFLICTS</legend>
+					        {% endif %} 
+
+					        <p>
+							{% if client_data['Opposing Party'] %}
+							{{ client_data['Opposing Party'] }} 
+							{% endif %}
+							</p>
+
+							<p>
+							{% if client_data['Opposing Party Counsel'] %}
+							{{ client_data['Opposing Party Counsel'] }} 
+							{% endif %}
+							</p>
+	
+
+							{% if client_data['Notes'] %}
+					        <legend>NOTES</legend>
+					        {% endif %} 
+
+							<p>
+							{% if client_data['Notes'] %}
+							{{ client_data['Notes'] }} 
+							{% endif %} 
+							</p>
+					    </fieldset>
+					</div>
+					<p><input id="submit" type="submit" value="SUBMIT CLIENT INFORMATION"></p>
+				</form>	
+	</body>
+</html>

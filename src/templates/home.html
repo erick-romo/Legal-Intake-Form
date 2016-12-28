@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% from "_formhelper.html" import render_field, render_field_with_errors %}
+<html lang="en">
+
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <title></title>
+	    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles/mainpage.css') }}">
+
+	</head>
+	<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<header>LEGAL INTAKE FORM</header>
+				<form action='/' method="POST" id="form">
+						{{render_field_with_errors(form.firstName, class="form-control", placeholder="FIRST NAME")}}
+
+						{{render_field_with_errors(form.lastName, class="form-control", placeholder="LAST NAME(S)")}}
+						
+						{{render_field_with_errors(form.dob, class="form-control", placeholder="DATE OF BIRTH")}}
+
+						{{render_field_with_errors(form.address, class="form-control", placeholder="ADDRESS")}}
+
+						{{render_field_with_errors(form.city, class="form-control", placeholder="CITY")}}
+
+						{{render_field_with_errors(form.zipcode, class="form-control", placeholder="ZIPCODE")}}
+
+						{{render_field_with_errors(form.telephone, class="form-control", placeholder="TELEPHONE")}}
+
+						<label>{{form.safeNumber.label}}: </label>
+						<input class="form-control" {{ form.safeNumber }}
+
+						{{render_field_with_errors(form.language, class="form-control", placeholder="PRIMARY LANGUAGE")}}
+
+						{{render_field_with_errors(form.income, class="form-control", placeholder="INCOME")}}
+
+						{{render_field_with_errors(form.incomeSource, class="form-control", placeholder="INCOME SOURCE")}}
+
+						{{render_field_with_errors(form.dependents, class="form-control", placeholder="DEPENDENTS")}}
+
+						{{render_field_with_errors(form.health, class="form-control", placeholder="IF HEALTH ISSUES, DIAGNOSIS")}}
+
+						<label>{{form.military.label}}: </label>
+						<input class="form-control" {{ form.military }}
+
+						{{render_field_with_errors(form.immigration, class="form-control", placeholder="IMMIGRATION STATUS")}}
+
+						{{render_field_with_errors(form.legalIssue, class="form-control", placeholder="LEGAL PROBLEM")}}
+
+						{{render_field_with_errors(form.county, class="form-control", placeholder="IF ACTIVE CASE, ENTER COUNTY")}}
+
+						{{render_field_with_errors(form.caseNumber, class="form-control", placeholder="IF ACTIVE CASE, ENTER CASE NUMBER")}}
+
+						{{render_field_with_errors(form.deadlines, class="form-control", placeholder="KNOWN DEADLINES")}}
+
+						{{render_field_with_errors(form.op, class="form-control", placeholder="OPPOSING PARTY")}}
+
+						{{render_field_with_errors(form.opCounsel, class="form-control", placeholder="OPPOSING PARTY COUNSEL")}}
+						
+						{{render_field_with_errors(form.notes, class="form-control", placeholder="NOTES", id="message")}}
+
+						<p><input id="submit" type="submit" value="SUBMIT FORM"></p>
+				
+				</form>			
+
+	</body>
+</html>
+
+
+
+

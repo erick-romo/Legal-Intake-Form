@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% from "_formhelper.html" import render_field, render_field_with_errors %}
+<html lang="en">
+
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <title></title>
+	    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles/mainpage.css') }}">
+	</head>
+	<body>
+
+	<p>Hello, this is a person in need of your services. Please check their information below:</p> \n
+		
+		First Name: %s
+		Last Name: %s
+		Date of Birth: %s
+		Address: %s
+		Telephone: %s
+		Safe Number to Call?: %s
+		Primary Language: %s
+		Income: %s
+		Income Source: %s
+		Dependents: %s
+		Health Diagnosis: %s
+		Military Service: %s
+		Immigration Status: %s
+		Legal Problem: %s
+		County Where Case is Active: %s
+		Case Number: %s
+		Approaching Deadlines: %s
+		Opposing Party: %s
+		Opposing Party Counsel: %s
+		Notes: %s
+		 % (session['client_data']['First Name'], session['client_data']['Last Name'], session['client_data']['Date of Birth'], session['client_data']['Address'], session['client_data']['Telephone'], session['client_data']['Safe Number to Call'], session['client_data']['Primary Language'], session['client_data']['Income'], session['client_data']['Income Source'], session['client_data']['Dependents'], session['client_data']['Health Diagnosis'], session['client_data']['Military Service'], session['client_data']['Immigration Status'], session['client_data']['Legal Problem'], session['client_data']['County Where Case is Active'], session['client_data']['Case Number'], session['client_data']['Approaching Deadlines'], session['client_data']['Opposing Party'], session['client_data']['Opposing Party Counsel'], session['client_data']['Notes'])
+
+	</body>
