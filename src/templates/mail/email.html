@@ -1,40 +1,144 @@
 <!DOCTYPE html>
-{% from "_formhelper.html" import render_field, render_field_with_errors %}
-<html lang="en">
 
-	<head>
-	    <meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="description" content="">
-	    <meta name="author" content="">
-	    <title></title>
-	    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles/mainpage.css') }}">
-	</head>
-	<body>
-
-	<p>Hello, this is a person in need of your services. Please check their information below:</p> \n
+	<p>Hello, this is a person in need of your services. Please check their information below:</p> 
 		
-		First Name: %s
-		Last Name: %s
-		Date of Birth: %s
-		Address: %s
-		Telephone: %s
-		Safe Number to Call?: %s
-		Primary Language: %s
-		Income: %s
-		Income Source: %s
-		Dependents: %s
-		Health Diagnosis: %s
-		Military Service: %s
-		Immigration Status: %s
-		Legal Problem: %s
-		County Where Case is Active: %s
-		Case Number: %s
-		Approaching Deadlines: %s
-		Opposing Party: %s
-		Opposing Party Counsel: %s
-		Notes: %s
-		 % (session['client_data']['First Name'], session['client_data']['Last Name'], session['client_data']['Date of Birth'], session['client_data']['Address'], session['client_data']['Telephone'], session['client_data']['Safe Number to Call'], session['client_data']['Primary Language'], session['client_data']['Income'], session['client_data']['Income Source'], session['client_data']['Dependents'], session['client_data']['Health Diagnosis'], session['client_data']['Military Service'], session['client_data']['Immigration Status'], session['client_data']['Legal Problem'], session['client_data']['County Where Case is Active'], session['client_data']['Case Number'], session['client_data']['Approaching Deadlines'], session['client_data']['Opposing Party'], session['client_data']['Opposing Party Counsel'], session['client_data']['Notes'])
+			<h4>IDENTIFYING INFORMATION: </h4>
 
-	</body>
+	        {% if client_data['First Name'] %}
+			<p>NAME: {{ client_data['First Name'] }} 
+			{% endif %}
+			</p>
+
+	       
+	        {% if client_data['Last Name'] %}
+			<p>LAST NAME: {{ client_data['Last Name'] }} 
+			{% endif %}
+			</p>
+
+	        {% if client_data['Date of Birth'] %}
+			<p>DOB: {{ client_data['Date of Birth'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Address'] %}
+			<p>ADDRESS: {{ client_data['Address'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['City'] %}
+			<p>CITY: {{ client_data['City'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Zip'] %}
+			<p>ZIP CODE: {{ client_data['Zip'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Telephone'] %}
+			<p>TELEPHONE: {{ client_data['Telephone'] }} 
+			{% endif %}
+			</p>							
+
+			{% if client_data['Safe Number to Call'] == True %}
+				<p>SAFE NUMBER TO CALL?: Yes </p> 
+
+				{% else %}
+				<p>SAFE NUMBER TO CALL?: No </p>
+
+				{% endif %}
+
+			{% if client_data['Language'] %}
+			<p>PRIMARY LANGUAGE: {{ client_data['Language'] }} 
+			{% endif %}
+			</p>
+
+	        <h4>ELIGIBILITY: </h4>				
+			
+			{% if client_data['Income'] %}
+			<p>INCOME: {{ client_data['Income'] }} 
+			{% endif %}
+			</p>
+
+			
+			{% if client_data['Income Source'] %}
+			<p>INCOME SOURCE: {{ client_data['Income Source'] }} 
+			{% endif %}
+			</p>
+
+			
+			{% if client_data['Dependents'] %}
+			<p>DEPENDENTS: {{ client_data['Dependents'] }} 
+			{% endif %}
+			</p>
+
+			
+			{% if client_data['Health Diagnosis'] %}
+			<p>HEALTH DIAGNOSIS: {{ client_data['Health Diagnosis'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Military Service'] == True %}
+				<p>MILITARY SERVICE: Yes </p>
+
+				{% else %}
+				<p>MILITARY SERVICE: No </p>
+			
+				{% endif %}
+
+			{% if client_data['Immigration Status'] %}
+			<p>IMMIGRATION STATUS: {{ client_data['Immigration Status'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Legal Problem'] %}
+
+	        <h4>LEGAL ISSUE: </h4>	
+			{% endif %}							
+
+			{% if client_data['Legal Problem'] %}
+			<p>LEGAL PROBLEM: {{ client_data['Legal Problem'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['County Where Case is Active'] %}
+			<p>COUNTY WHERE CASE IS ACTIVE: {{ client_data['County Where Case is Active'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Case Number'] %}
+			<p>CASE NUMBER: {{ client_data['Case Number'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Approaching Deadlines'] %}
+			<p>APPROACHING DEADLINES: {{ client_data['Approaching Deadlines'] }} 
+			{% endif %}
+			</p>
+
+
+			{% if client_data['Opposing Party'] %}
+
+	        <h4>CONFLICTS: </h4>
+			{% endif %}
+
+			{% if client_data['Opposing Party'] %}
+			<p>OPPOSING PARTY: {{ client_data['Opposing Party'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Opposing Party Counsel'] %}
+			<p>OPPOSING PARTY COUNSEL: {{ client_data['Opposing Party Counsel'] }} 
+			{% endif %}
+			</p>
+
+			{% if client_data['Notes'] %}
+
+		    <h4>NOTES: </h4>
+			{% endif %} 
+
+			{% if client_data['Notes'] %}
+			{{ client_data['Notes'] }} 
+			{% endif %} 
+
+

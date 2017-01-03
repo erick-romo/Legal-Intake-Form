@@ -1,3 +1,4 @@
+<style>
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
@@ -74,6 +75,16 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
   color: #cbc6c1;
 }
 
+label {
+
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  color: #aca49c;
+;
+  width: 470px;
+  height: 50px;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background: #e2dedb;
@@ -114,6 +125,13 @@ input {
   -ms-transition: all 0.3s ease-in-out;
 }
 
+
+fieldset {
+  position: relative;
+  border: solid 1px #b3aca7;
+
+
+}
 input:hover {
   background: #b3aca7;
   color: #e2dedb;
@@ -146,6 +164,49 @@ textarea:hover {
   color: #e2dedb;
 }
 
+input[type="checkbox"] {
+  display: none;
+}
+
+label{
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label:before {
+  background: #e2dedb;
+  color: #b3aca7;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  content: "\00a0";
+  margin: 0 .25em 0 0;
+  vertical-align: top;
+  padding: 0;
+  border: 1px solid #b3aca7;
+
+
+}
+
+input[type="checkbox"]:checked + label:before{
+  background: #e2dedb;
+  color: #b3aca7;
+  content: "\2713";
+  text-align: center;
+
+}
+
+input[type="checkbox"]:checked + label:after{
+  font-weight: bold;
+  color: #b3aca7;
+  background: #e2dedb;
+
+}
+
+h4 {
+/*  text-decoration: underline;*/
+font-size: 1.15em;
+}
+
 #submit {
   width: 502px;
   
@@ -153,7 +214,7 @@ textarea:hover {
   margin: -5px 0px 0px 0px;
   
   font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
+  font-size: 1em;
   color: #b3aca7;
   
   outline:none;
@@ -166,3 +227,5 @@ textarea:hover {
 #submit:hover {
   color: #e2dedb;
 }
+
+</style>
